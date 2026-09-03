@@ -1,3 +1,8 @@
+adb shell pm list packages | sed 's/package://' | while read pkg; do
+  adb shell am force-stop "$pkg"
+done
+
+
 package xtr.keymapper.floatingkeys;
 
 import android.content.Context;
@@ -49,12 +54,7 @@ public class MovableFrameLayout extends FrameLayout implements View.OnTouchListe
                 int parentHeight = viewParent.getHeight();
 
                 float newX = motionEvent.getRawX() + dX;
-                newX = Math.max(layoutParams.leftMargin, newX); // Don't allow the FAB past the left hand side of the parent
-                newX = Math.min(parentWidth - viewWidth - layoutParams.rightMargin, newX); // Don't allow the FAB past the right hand side of the parent
-
                 float newY = motionEvent.getRawY() + dY;
-                newY = Math.max(layoutParams.topMargin, newY); // Don't allow the FAB past the top of the parent
-                newY = Math.min(parentHeight - viewHeight - layoutParams.bottomMargin, newY); // Don't allow the FAB past the bottom of the parent
 
                 view.animate()
                         .x(newX)
