@@ -1,8 +1,3 @@
-adb shell pm list packages | sed 's/package://' | while read pkg; do
-  adb shell am force-stop "$pkg"
-done
-
-
 package xtr.keymapper.floatingkeys;
 
 import android.content.Context;
