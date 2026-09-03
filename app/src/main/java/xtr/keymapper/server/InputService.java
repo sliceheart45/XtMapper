@@ -269,10 +269,10 @@ public class InputService implements IInputInterface {
                 mouseEventHandler.handleEvent(BTN_MIDDLE, value);
                 break;
             case "REL_X":
-                    mouseEventHandler.handleEvent(REL_X, value);
+                  mouseEventHandler.handleEvent(REL_X, value);
                 break;
             case "REL_Y":
-                    mouseEventHandler.handleEvent(REL_Y, value);
+                  mouseEventHandler.handleEvent(REL_Y, value);
                 break;
         }
     }
